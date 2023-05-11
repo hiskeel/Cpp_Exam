@@ -10,8 +10,11 @@ void main() {
 	bool EXIT = false;
 	bool menuBack = false;
 
-	Loading();
+	//Loading();
+	ProductSt avatProd;
+	WarehouseGoods avatWareHouse;
 
+	avatWareHouse.CreateList();
 	while (!EXIT) {
 		choice = MainMenu();
 		switch (choice) {
@@ -20,7 +23,7 @@ void main() {
 			while (!menuBack) {
 				choice = WarehouseMenu();
 				switch (choice) {
-				case 1:
+				case 1: avatWareHouse.ShowList();
 					break;
 				case 2:
 					break;

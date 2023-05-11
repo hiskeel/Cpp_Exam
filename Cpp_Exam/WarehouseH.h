@@ -1,24 +1,20 @@
 #pragma once
+#include<iostream>
+#include"ProductH.h"
+
+using namespace std;
 
 struct WarehouseGoods
 {
 private:
-	string name;
-	string group;
-	string arrival;
-	string expiring;
-	string producer;
-	int size = 0;
-
+	ProductSt* prodBase;
+	int size = 1;
 public:
-	void SetName();
-	string GetName();
-	void SetProducer();
-	string GetProducer();
-	void SetGroup();
-	string GetGroup();
+	
 
 	void CreateList();
-	void CreateProd();
+	void ShowGroups();
+	void ShowList();
+
 
 };
