@@ -2,6 +2,7 @@
 #include "MenuH.h"
 #include "LoadH.h"
 #include "WarehouseH.h"
+#include <string>
 
 using namespace std;
 

@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include"ProductH.h"
+#include <string>
 
 using namespace std;
 

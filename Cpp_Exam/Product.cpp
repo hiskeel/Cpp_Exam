@@ -1,6 +1,8 @@
 #include<iostream>
 #include"WarehouseH.h"
 #include"ProductH.h"
+#include <string>
+
 
 using namespace std;
 
@@ -28,12 +30,28 @@ string ProductSt::GetGroup() {
 	//cout << group;
 	return group;
 }
+void ProductSt::SetArrival() {
+	arrival.SetDate();
+}
+string ProductSt::GetArrival() {
+	return arrival.GetDate();;
+}
+void ProductSt::SetExpire() {
+	expiring.SetDate();
+}
+string ProductSt::GetExpire() {
+	return expiring.GetDate();
+}
 void ProductSt::CreateProd() {
 	cout << "Choose group, or create new(Enter 0 to create):" << endl;
 	SetGroup();
 	SetName();
 	SetProducer();
-	cout << "Enter ariving";
-	cout << "Enter exp";
+	cout << "Enter coming date: " << endl;
+	SetArrival();
+	cout << endl;
+	cout << "Enter expiring date:" << endl;
+	SetExpire();
+	cout << endl;
 
 }

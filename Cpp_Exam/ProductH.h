@@ -1,5 +1,7 @@
 #pragma once
 #include<iostream>
+#include"DateArExpH.h"
+#include <string>
 
 using namespace std;
 
@@ -8,8 +10,8 @@ struct ProductSt
 private:
 	string name;
 	string group;
-	string arrival;
-	string expiring;
+	Date arrival;
+	Date expiring;
 	string producer;
 	int size = 0;
 
@@ -20,6 +22,10 @@ public:
 	string GetProducer();
 	void SetGroup();
 	string GetGroup();
+	void SetArrival();
+	string GetArrival();
+	void SetExpire();
+	string GetExpire();
 
 	void CreateList();
 	void CreateProd();

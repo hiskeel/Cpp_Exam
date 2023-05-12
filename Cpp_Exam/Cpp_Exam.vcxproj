@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DateArrExp.cpp" />
     <ClCompile Include="Loading.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="Warehouse.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DateArExpH.h" />
     <ClInclude Include="LoadH.h" />
     <ClInclude Include="MenuH.h" />
     <ClInclude Include="ProductH.h" />
