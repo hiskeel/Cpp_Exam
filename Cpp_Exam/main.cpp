@@ -24,12 +24,14 @@ void main() {
 			while (!menuBack) {
 				choice = WarehouseMenu();
 				switch (choice) {
-				case 1: avatWareHouse.ShowList();
+				case 1: 
+					avatWareHouse.AddProduct();
 					break;
 				case 2:
 					break;
 				case 3:
 					break;
+			
 				case 9:
 					menuBack = true;
 					break;
@@ -102,6 +104,9 @@ void main() {
 				}
 
 			}
+			break;
+		case 4:
+			avatWareHouse.ShowList();
 			break;
 		case 0:
 			EXIT = true;	

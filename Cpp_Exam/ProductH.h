@@ -13,9 +13,15 @@ private:
 	Date arrival;
 	Date expiring;
 	string producer;
-	int size = 0;
+	int price;
+	int ID = 0;
+	
 
 public:
+	void SetID();
+	int GetID();
+	void SetPrice();
+	int GetPrice();
 	void SetName();
 	string GetName();
 	void SetProducer();
@@ -27,7 +33,7 @@ public:
 	void SetExpire();
 	string GetExpire();
 
-	void CreateList();
+
 	void CreateProd();
 
 

@@ -7,7 +7,7 @@ int MainMenu() {
 
 	int choice = 0;
 
-	cout << "Choose what you want to work with:\n1. Warehouse changes;\n2. Search for product;\n3. Sort product;\n0. Exit! " << endl;
+	cout << "Choose what you want to work with:\n1. Warehouse changes;\n2. Search for product;\n3. Sort product;\n4. Show product list;\n0. Exit! " << endl;
 	cin >> choice;
 	system("cls");
 	return choice;

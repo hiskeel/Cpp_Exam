@@ -14,8 +14,8 @@ public:
 	
 
 	void CreateList();
-	void ShowGroups();
+	void AddProduct();
 	void ShowList();
-
+	void DeleteProduct();
 
 };
