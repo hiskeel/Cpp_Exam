@@ -42,5 +42,8 @@ int SortMenu() {
 	return choice;
 
 }
+//int EditMenu() {
+//	cout << "Choose what you want to change:\n1. ID;\n2. Group name;\n3. Name of product;\n4. "
+//}
 
 

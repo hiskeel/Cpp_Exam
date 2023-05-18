@@ -10,6 +10,7 @@ void main() {
 	int choice = 0;
 	bool EXIT = false;
 	bool menuBack = false;
+	string any;
 
 	//Loading();
 	ProductSt avatProd;
@@ -25,11 +26,16 @@ void main() {
 				choice = WarehouseMenu();
 				switch (choice) {
 				case 1: 
+
 					avatWareHouse.AddProduct();
 					break;
 				case 2:
+					
+					avatWareHouse.ShowList();
+					avatWareHouse.DeleteProduct();
 					break;
 				case 3:
+					avatWareHouse.ReplaceProduct();
 					break;
 			
 				case 9:
@@ -107,6 +113,9 @@ void main() {
 			break;
 		case 4:
 			avatWareHouse.ShowList();
+			cout << "\nEnter any symbol to continue..." << endl;
+			cin >> any;
+			system("cls");
 			break;
 		case 0:
 			EXIT = true;	

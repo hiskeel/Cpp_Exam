@@ -6,16 +6,28 @@
 
 using namespace std;
 
+
 void ProductSt::SetName() {
 	cout << "Enter name: ";
-	cin >> name;
+	/*cin.ignore(numeric_limits<streamsize>::max(), '\n');*/
+	getline(cin, name);
 }
 string ProductSt::GetName() {
 	//cout << name;
 	return name;
 }
 void ProductSt::SetID() {
-	ID++;
+	/*apply = false;*/
+	/*while (!apply) {*/
+		cout << "Enter ID: ";
+		cin >> ID;
+	/*	for(int i = 0; i < WareAgent.GetSize(); i++)
+			if (WareAgent.GetsID() == ID) {
+
+		}
+	}*/
+		
+		
 
 }
 int ProductSt::GetID() {
@@ -33,7 +45,8 @@ int ProductSt::GetPrice() {
 }
 void ProductSt::SetProducer() {
 	cout << "Enter Producer: ";
-	cin >> producer;
+	//cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	getline(cin, producer);
 }
 string ProductSt::GetProducer() {
 	/*cout << producer;*/
@@ -41,7 +54,8 @@ string ProductSt::GetProducer() {
 }
 void ProductSt::SetGroup() {
 	cout << "Enter group name: ";
-	cin >> group;
+	//cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	getline(cin, group);
 }
 string ProductSt::GetGroup() {
 	//cout << group;
@@ -63,14 +77,17 @@ void ProductSt::CreateProd() {
 	cout << "Choose group, or create new(Enter 0 to create):" << endl;
 	SetGroup();
 	SetName();
-	SetPrice();
 	SetProducer();
 	SetID();
+	SetPrice();
 	cout << "Enter coming date: " << endl;
 	SetArrival();
 	cout << endl;
 	cout << "Enter expiring date:" << endl;
 	SetExpire();
-	cout << endl;
 
+	cout << "Enter any symbol to continue..." << endl;
+	cin >> any;
+
+	system("cls");
 }
