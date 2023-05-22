@@ -9,8 +9,11 @@ using namespace std;
 
 void ProductSt::SetName() {
 	cout << "Enter name: ";
-	/*cin.ignore(numeric_limits<streamsize>::max(), '\n');*/
+
+	/*cin.ignore(std::numeric_limits<std::streamsize>::max());*/
 	getline(cin, name);
+	
+	/*cout << name;*/
 }
 string ProductSt::GetName() {
 	//cout << name;
@@ -45,8 +48,10 @@ int ProductSt::GetPrice() {
 }
 void ProductSt::SetProducer() {
 	cout << "Enter Producer: ";
-	//cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	/*cin.ignore(std::numeric_limits<std::streamsize>::max());*/
 	getline(cin, producer);
+	
+	//cout << producer;
 }
 string ProductSt::GetProducer() {
 	/*cout << producer;*/
@@ -54,8 +59,10 @@ string ProductSt::GetProducer() {
 }
 void ProductSt::SetGroup() {
 	cout << "Enter group name: ";
-	//cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	/*cin.ignore(std::numeric_limits<std::streamsize>::max());*/
 	getline(cin, group);
+	
+	/*cout << group;*/
 }
 string ProductSt::GetGroup() {
 	//cout << group;
@@ -76,8 +83,11 @@ string ProductSt::GetExpire() {
 void ProductSt::CreateProd() {
 	cout << "Choose group, or create new(Enter 0 to create):" << endl;
 	SetGroup();
+	/*cout << "Group :" << GetGroup() << endl*/;
 	SetName();
+	/*cout << "Name: " << GetName() << endl;*/
 	SetProducer();
+	/*cout << "Producer: " << GetProducer() << endl;*/
 	SetID();
 	SetPrice();
 	cout << "Enter coming date: " << endl;

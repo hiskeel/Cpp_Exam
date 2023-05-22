@@ -23,7 +23,8 @@ public:
 	void ReplaceProduct();
 
 	int GetsID(int count);
-	int GetSize();
-
+	void SortByPriceToHigher();
+	void SortByPriceToLower();
+	void SortByGroup();
 
 };

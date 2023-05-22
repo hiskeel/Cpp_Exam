@@ -89,10 +89,19 @@ void main() {
 				choice = SortMenu();
 				switch (choice) {
 				case 1:
+					avatWareHouse.SortByPriceToHigher();
+					cout << "Sorted!\n\nEnter any key to continue..." << endl;
+					cin >> any;
+					system("cls");
 					break;
 				case 2:
+					avatWareHouse.SortByPriceToLower();
+					cout << "Sorted!\n\nEnter any key to continue..." << endl;
+					cin >> any;
+					system("cls");
 					break;
 				case 3:
+
 					break;
 				case 9:
 					menuBack = true;

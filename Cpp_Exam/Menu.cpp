@@ -36,7 +36,7 @@ int SortMenu() {
 
 	int choice = 0;
 
-	cout << "Sort by:\n1. Price;\n2. Product Group;\n9. Back to main menu;\n0. Exit!" << endl;
+	cout << "Sort by:\n1. Price from lower;\n2. Price from higher\n2. Product Group;\n9. Back to main menu;\n0. Exit!" << endl;
 	cin >> choice;
 	system("cls");
 	return choice;
