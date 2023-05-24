@@ -16,8 +16,8 @@ void main() {
 	ProductSt avatProd;
 	WarehouseGoods avatWareHouse;
 
-	/*avatWareHouse.CreateList();*/
-	avatWareHouse.LoadListFromFile("db.txt");
+	avatWareHouse.CreateList();
+	/*avatWareHouse.LoadListFromFile("db.txt");*/
 
 	while (!EXIT) {
 		choice = MainMenu();

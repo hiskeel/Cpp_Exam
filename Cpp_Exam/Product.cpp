@@ -142,36 +142,36 @@ void ProductSt::SaveToFile(ofstream& file) {
 	file << GetArrival() << endl;
 	file << GetExpire() << endl;
 }
-void ProductSt::LoadFromFile(ifstream& file) {
-	int id;
-	file >> id;
-	LoadID(id);
-
-	string group;
-	file.ignore();
-	getline(file, group);
-	LoadGroup(group);
-
-	string name;
-	getline(file, name);
-	LoadName(name);
-
-	string producer;
-	getline(file, producer);
-	LoadProducer(producer);
-
-	int price;
-	file >> price;
-	LoadPrice(price);
-
-	//string arrival;
-	//file.ignore();
-	//getline(file, arrival);
-	//Date arrivalDate(arrival);
-	//LoadArrival(arrivalDate);
-
-	//string expire;
-	//getline(file, expire);
-	//Date expireDate(expire);
-	//LoadExpire(expireDate);
-}
+//void ProductSt::LoadFromFile(ifstream& file) {
+//	int id;
+//	file >> id;
+//	LoadID(id);
+//
+//	string group;
+//	file.ignore();
+//	getline(file, group);
+//	LoadGroup(group);
+//
+//	string name;
+//	getline(file, name);
+//	LoadName(name);
+//
+//	string producer;
+//	getline(file, producer);
+//	LoadProducer(producer);
+//
+//	int price;
+//	file >> price;
+//	LoadPrice(price);
+//
+//	string arrival;
+//	file.ignore();
+//	getline(file, arrival);
+//	Date arrivalDate(arrival);
+//	LoadArrival(arrivalDate);
+//
+//	string expire;
+//	getline(file, expire);
+//	Date expireDate(expire);
+//	LoadExpire(expireDate);
+//}

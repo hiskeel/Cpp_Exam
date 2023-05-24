@@ -345,23 +345,23 @@ void WarehouseGoods::ClearList() {
 	size = 0;
 	prodBase = nullptr;
 }
-void WarehouseGoods::LoadListFromFile(const string& filename) {
-	ifstream file(filename);
-	if (file.is_open()) {
-		// Clear the existing product base
-		ClearList();
-
-		// Read product information from the file
-		while (!file.eof()) {
-			ProductSt product;
-			product.LoadFromFile(file);
-			LoadProduct(product);
-		}
-
-		file.close();
-		cout << "Product list has been successfully loaded from the file." << endl;
-	}
-	else {
-		cout << "Unable to open the file for loading." << endl;
-	}
-}
+//void WarehouseGoods::LoadListFromFile(const string& filename) {
+//	ifstream file(filename);
+//	if (file.is_open()) {
+//		// Clear the existing product base
+//		ClearList();
+//
+//		// Read product information from the file
+//		while (!file.eof()) {
+//			ProductSt product;
+//			product.LoadFromFile(file);
+//			LoadProduct(product);
+//		}
+//
+//		file.close();
+//		cout << "Product list has been successfully loaded from the file." << endl;
+//	}
+//	else {
+//		cout << "Unable to open the file for loading." << endl;
+//	}
+//}
