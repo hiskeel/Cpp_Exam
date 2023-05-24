@@ -27,4 +27,17 @@ public:
 	void SortByPriceToLower();
 	void SortByGroup();
 
+	void SearchByName();
+	void SearchByProducer();
+	void SearchByGroup();
+	void SearchByPrice();
+	void SearchByAriving();
+	void SearchByExpiring();
+
+	void LoadProduct(const ProductSt& product);
+	void SaveListToFile(const string& filename);
+	void LoadListFromFile(const std::string& filename);
+	void ClearList();
+
+
 };

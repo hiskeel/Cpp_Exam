@@ -16,7 +16,9 @@ void main() {
 	ProductSt avatProd;
 	WarehouseGoods avatWareHouse;
 
-	avatWareHouse.CreateList();
+	/*avatWareHouse.CreateList();*/
+	avatWareHouse.LoadListFromFile("db.txt");
+
 	while (!EXIT) {
 		choice = MainMenu();
 		switch (choice) {
@@ -60,12 +62,24 @@ void main() {
 			while (!menuBack) {
 				choice = SearchMenu();
 				switch (choice) {
-				case 1:
+				case 1:avatWareHouse.SearchByName();
 					break;
 				case 2:
+					avatWareHouse.SearchByProducer();
 					break;
 				case 3:
+					avatWareHouse.SearchByPrice();
 					break;
+				case 4:
+					avatWareHouse.SearchByGroup();
+					break;
+				case 5:
+					avatWareHouse.SearchByAriving();
+					break;
+				case 6:
+					avatWareHouse.SearchByExpiring();
+					break;
+				
 				case 9:
 					menuBack = true;
 					break;
@@ -101,7 +115,10 @@ void main() {
 					system("cls");
 					break;
 				case 3:
-
+					avatWareHouse.SortByGroup();
+					cout << "Sorted!\n\nEnter any key to continue..." << endl;
+					cin >> any;
+					system("cls");
 					break;
 				case 9:
 					menuBack = true;
@@ -135,5 +152,6 @@ void main() {
 			break;
 		}
 	}
+	avatWareHouse.SaveListToFile("db.txt");
 
 }
