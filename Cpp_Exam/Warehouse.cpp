@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 #include <sstream> 
-#include <vector>
+
 
 
 using namespace std;
@@ -51,7 +51,7 @@ void WarehouseGoods::SortByGroup() {
 	ProductSt temp;
 	for (int i = 0; i < size; i++) {
 		for (int j = i; j < size; j++) {
-			if (prodBase[j].GetGroup() > prodBase[i].GetGroup()) {
+			if (prodBase[j].GetGroup() < prodBase[i].GetGroup()) {
 
 				temp = prodBase[i];
 				prodBase[i] = prodBase[j];
@@ -68,7 +68,7 @@ void WarehouseGoods::ShowList() {
 	
 	for (int i = 0; i < size; i++) {
 		
-		cout << "* ID: " << prodBase[i].GetID() << " => " << prodBase[i].GetGroup() << ", " << prodBase[i].GetName() << ", producer: " << prodBase[i].GetProducer() << ", price: " << prodBase[i].GetPrice() << ", date of arriving: " << prodBase[i].GetArrival() << ", date of expiring: " << prodBase[i].GetExpire() << ";" << endl;
+		cout << "* ID: " << prodBase[i].GetID() << " => " << prodBase[i].GetGroup() << ", " << prodBase[i].GetName() << ", producer: " << prodBase[i].GetProducer() << ", price: " << prodBase[i].GetPrice() << "grn. , date of arriving: " << prodBase[i].GetArrival() << ", date of expiring: " << prodBase[i].GetExpire() << ";" << endl;
 		
 
 	}
@@ -123,10 +123,7 @@ void WarehouseGoods::DeleteProduct() {
 
 }
 
-int WarehouseGoods::GetsID(int count) {
-	return prodBase[count].GetID();
 
-}
 void WarehouseGoods::ReplaceProduct() {
 	int choice = 0;
 	ShowList();
@@ -326,13 +323,13 @@ void WarehouseGoods::FormProductArray(const std::string& filename, int maxSize) 
 				break;  
 			}
 
-			file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+			file.ignore(numeric_limits<streamsize>::max(), '\n');  
 
 			getline(file, group);
 			getline(file, name);
 			getline(file, producer);
 			file >> price;
-			file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+			file.ignore(numeric_limits<streamsize>::max(), '\n');  
 			getline(file, arrival);
 			getline(file, expire);
 
@@ -350,7 +347,7 @@ void WarehouseGoods::FormProductArray(const std::string& filename, int maxSize) 
 			char delimiter;
 			file >> delimiter;
 			if (delimiter == '|') {
-				file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+				file.ignore(numeric_limits<streamsize>::max(), '\n');  
 			}
 		}
 
@@ -358,7 +355,7 @@ void WarehouseGoods::FormProductArray(const std::string& filename, int maxSize) 
 
 		file.close();
 		size = count;
-		cout << "Data has been successfully read from the file." << endl;
+	/*	cout << "Data has been successfully read from the file." << endl;*/
 	}
 	else {
 		cout << "Unable to open the file for reading." << endl;

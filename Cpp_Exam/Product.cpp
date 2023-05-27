@@ -29,15 +29,23 @@ void ProductSt::LoadID(int& value) {
 	ID = value;
 }
 void ProductSt::SetID() {
-	/*apply = false;*/
-	/*while (!apply) {*/
-		cout << "Enter ID: ";
-		cin >> ID;
-	/*	for(int i = 0; i < WareAgent.GetSize(); i++)
-			if (WareAgent.GetsID() == ID) {
-
+	//int apply;
+	//apply = false;
+	//while (!apply) {
+	srand(time(NULL));
+	ID = rand() % 10000;
+/*		for (int i = 0; i < WareAgent.GetSize(); i++) {
+			if (prodBase[i].GetID() == ID) {
+				system("cls");
+				cout << "This ID is already busy!\n" << endl;
+				break;
+			}
+			else {
+				apply = true;
+			}
 		}
-	}*/
+		*/	
+	/*}*/
 		
 		
 

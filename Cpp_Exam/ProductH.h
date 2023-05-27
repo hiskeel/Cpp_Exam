@@ -17,14 +17,15 @@ private:
 	string producer;
 	int price;
 	int ID;
+	Date arrivalGet;
+	Date expiringGet;
 	
-	/*WarehouseGoods WareAgent;*/
+	
 	
 	
 
 public:
-	Date arrivalGet;
-	Date expiringGet;
+
 	
 	void LoadID(int& value);
 	void SetID();

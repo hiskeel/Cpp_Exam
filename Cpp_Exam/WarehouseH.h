@@ -11,6 +11,7 @@ private:
 	int IDdelete;
 	int approve;
 	ProductSt* prodBase;
+	int ID;
 	int size = 1;
 	bool apply = false;
 public:
@@ -22,7 +23,7 @@ public:
 	void DeleteProduct();
 	void ReplaceProduct();
 
-	int GetsID(int count);
+	
 	void SortByPriceToHigher();
 	void SortByPriceToLower();
 	void SortByGroup();
