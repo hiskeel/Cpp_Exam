@@ -17,7 +17,7 @@ int MainMenu() {
 int WarehouseMenu() {
 	int choice = 0;
 
-	cout << "Warehouse:\n1. Add new product\n2. Delete product;\n3. Change product;\n9. Back to main menu;\n0. Exit! " << endl;
+	cout << "Warehouse:\n1. Add new product\n2. Delete product;\n3. Replace product;\n9. Back to main menu;\n0. Exit! " << endl;
 	cin >> choice;
 	system("cls");
 	return choice;

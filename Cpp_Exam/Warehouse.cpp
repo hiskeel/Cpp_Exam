@@ -3,16 +3,18 @@
 #include <string>
 #include <fstream>
 #include <sstream> 
+#include <vector>
+
 
 using namespace std;
 
 
 void WarehouseGoods::CreateList() {
 	prodBase = new  ProductSt[size];
-	for (int i = 0; i < size; i++) {
-		prodBase[i].CreateProd();
+	//for (int i = 0; i < size; i++) {
+	//	/*prodBase[i].CreateProd();*/
 
-	}
+	//}
 }
 
 // Sorting
@@ -73,27 +75,6 @@ void WarehouseGoods::ShowList() {
 
 }
 
-void WarehouseGoods::LoadProduct(const ProductSt& product) {
-	// Increase the size of the array
-	size++;
-
-	// Create a new array with the increased size
-	ProductSt* tmpArr = new ProductSt[size];
-
-	// Copy the existing products to the new array
-	for (int i = 0; i < size - 1; i++) {
-		tmpArr[i] = prodBase[i];
-	}
-
-	// Add the new product to the end of the array
-	tmpArr[size - 1] = product;
-
-	// Delete the old array
-	delete[] prodBase;
-
-	// Assign the new array to prodBase
-	prodBase = tmpArr;
-}
 void WarehouseGoods::AddProduct() {
 	ProductSt* tmpArr = new ProductSt[size + 1];
 	for (int i = 0; i < size; i++) {
@@ -119,23 +100,26 @@ void WarehouseGoods::DeleteProduct() {
 			for (int i = 0; i < size; i++) {
 				if (t > i) {
 				tempArr[i] = prodBase[i];
+				
 			}
 
 			else if (t < i) {
 				tempArr[i - 1] = prodBase[i];
+				
 			}
 			
 			
 			}
-
+			delete[] prodBase;
+			prodBase = tempArr;
+			size--;
 		}
 		else {
 
 		}
 	}
-	delete[] prodBase;
-	prodBase = tempArr;
-	size--;
+
+	
 
 }
 
@@ -321,11 +305,75 @@ void WarehouseGoods::SearchByExpiring() {
 }
 
 // fileworks
+const int MAX_PRODUCTS = 100;
+
+void WarehouseGoods::FormProductArray(const std::string& filename, int maxSize) {
+	std::ifstream file(filename);
+	int count = 0;
+	
+	prodBase = new ProductSt[maxSize];
+	if (file.is_open()) {
+		while (count < maxSize && !file.eof()) {
+			int id;
+			std::string group;
+			std::string name;
+			std::string producer;
+			int price;
+			std::string arrival;
+			std::string expire;
+
+			if (!(file >> id)) {
+				break;  
+			}
+
+			file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+
+			getline(file, group);
+			getline(file, name);
+			getline(file, producer);
+			file >> price;
+			file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+			getline(file, arrival);
+			getline(file, expire);
+
+			prodBase[count].LoadID(id);
+			prodBase[count].LoadGroup(group);
+			prodBase[count].LoadName(name);
+			prodBase[count].LoadProducer(producer);
+			prodBase[count].LoadPrice(price);
+			prodBase[count].LoadArrival(arrival);
+			prodBase[count].LoadExpire(expire);
+
+			count++;
+			size++;  // «б≥льшуЇмо л≥чильник size
+
+			char delimiter;
+			file >> delimiter;
+			if (delimiter == '|') {
+				file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+			}
+		}
+
+		
+
+		file.close();
+		size = count;
+		cout << "Data has been successfully read from the file." << endl;
+	}
+	else {
+		cout << "Unable to open the file for reading." << endl;
+	}
+}
+
+
 void WarehouseGoods::SaveListToFile(const string& filename) {
 	ofstream file(filename);
 	if (file.is_open()) {
 		for (int i = 0; i < size; i++) {
 			prodBase[i].SaveToFile(file);
+			if (i < size - 1) {
+				file << "|" << endl;  
+			}
 		}
 		file.close();
 		cout << "Product list has been successfully saved to the file." << endl;
@@ -333,35 +381,4 @@ void WarehouseGoods::SaveListToFile(const string& filename) {
 	else {
 		cout << "Unable to open the file for saving." << endl;
 	}
-}
-void WarehouseGoods::ClearList() {
-	// Delete each product object in the array
-
-
-	// Delete the array
-	delete[] prodBase;
-
-	// Reset the size and prodBase
-	size = 0;
-	prodBase = nullptr;
-}
-//void WarehouseGoods::LoadListFromFile(const string& filename) {
-//	ifstream file(filename);
-//	if (file.is_open()) {
-//		// Clear the existing product base
-//		ClearList();
-//
-//		// Read product information from the file
-//		while (!file.eof()) {
-//			ProductSt product;
-//			product.LoadFromFile(file);
-//			LoadProduct(product);
-//		}
-//
-//		file.close();
-//		cout << "Product list has been successfully loaded from the file." << endl;
-//	}
-//	else {
-//		cout << "Unable to open the file for loading." << endl;
-//	}
-//}
+}	

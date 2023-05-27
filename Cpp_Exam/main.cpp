@@ -5,6 +5,7 @@
 #include <string>
 
 using namespace std;
+const int maxSize = 10;
 
 void main() {
 	int choice = 0;
@@ -17,7 +18,12 @@ void main() {
 	WarehouseGoods avatWareHouse;
 
 	avatWareHouse.CreateList();
-	/*avatWareHouse.LoadListFromFile("db.txt");*/
+	avatWareHouse.FormProductArray("db.txt", maxSize);
+
+
+	int size = 0;
+
+
 
 	while (!EXIT) {
 		choice = MainMenu();

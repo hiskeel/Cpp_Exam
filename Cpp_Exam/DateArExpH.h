@@ -12,6 +12,6 @@ private:
 	int year;
 
 public:
-	void SetDate();
+	string SetDate();
 	string GetDate();
 };

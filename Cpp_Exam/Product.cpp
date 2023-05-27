@@ -8,7 +8,7 @@
 using namespace std;
 
 // seters geters
-void ProductSt::LoadName(string value) {
+void ProductSt::LoadName(string& value) {
 	name = value;
 }
 void ProductSt::SetName() {
@@ -25,8 +25,8 @@ string ProductSt::GetName() {
 	return name;
 }
 
-void ProductSt::LoadID(int value) {
-
+void ProductSt::LoadID(int& value) {
+	ID = value;
 }
 void ProductSt::SetID() {
 	/*apply = false;*/
@@ -47,8 +47,8 @@ int ProductSt::GetID() {
 
 }
 
-void ProductSt::LoadPrice(int value) {
-
+void ProductSt::LoadPrice(int& value) {
+	price = value;
 }
 void ProductSt::SetPrice() {
 	cout << "Enter price: ";
@@ -60,7 +60,7 @@ int ProductSt::GetPrice() {
 
 }
 
-void ProductSt::LoadProducer(string value) {
+void ProductSt::LoadProducer(string& value) {
 	producer = value;
 }
 void ProductSt::SetProducer() {
@@ -76,7 +76,7 @@ string ProductSt::GetProducer() {
 	return producer;
 }
 
-void ProductSt::LoadGroup(string value) {
+void ProductSt::LoadGroup(string& value) {
 	group = value;
 }
 void ProductSt::SetGroup() {
@@ -91,24 +91,27 @@ string ProductSt::GetGroup() {
 	return group;
 }
 
-void ProductSt::LoadArrival(Date value) {
+void ProductSt::LoadArrival(string& value) {
 	arrival = value;
 }
 void ProductSt::SetArrival() {
-	arrival.SetDate();
+	
+	arrival = arrivalGet.SetDate();
 }
 string ProductSt::GetArrival() {
-	return arrival.GetDate();;
+
+	return arrival;
 }
 
-void ProductSt::LoadExpire(Date value) {
+void ProductSt::LoadExpire(string& value) {
 	expiring = value;
 }
 void ProductSt::SetExpire() {
-	expiring.SetDate();
+	expiring = expiringGet.SetDate();
 }
 string ProductSt::GetExpire() {
-	return expiring.GetDate();
+	
+	return expiring;
 }
 
 // fileworks creating
@@ -142,36 +145,7 @@ void ProductSt::SaveToFile(ofstream& file) {
 	file << GetArrival() << endl;
 	file << GetExpire() << endl;
 }
-//void ProductSt::LoadFromFile(ifstream& file) {
-//	int id;
-//	file >> id;
-//	LoadID(id);
-//
-//	string group;
-//	file.ignore();
-//	getline(file, group);
-//	LoadGroup(group);
-//
-//	string name;
-//	getline(file, name);
-//	LoadName(name);
-//
-//	string producer;
-//	getline(file, producer);
-//	LoadProducer(producer);
-//
-//	int price;
-//	file >> price;
-//	LoadPrice(price);
-//
-//	string arrival;
-//	file.ignore();
-//	getline(file, arrival);
-//	Date arrivalDate(arrival);
-//	LoadArrival(arrivalDate);
-//
-//	string expire;
-//	getline(file, expire);
-//	Date expireDate(expire);
-//	LoadExpire(expireDate);
-//}
+
+
+
+

@@ -3,10 +3,14 @@
 #include "DateArExpH.h"
 
 
-void Date::SetDate() {
+string Date::SetDate() {
 	cout << "Enter day: "; cin >> day;
 	cout << "Enter month: "; cin >> month;
 	cout << "Enter year: "; cin >> year;
+	string date = to_string(day) + "." + to_string(month) + "." + to_string(year);
+
+
+	return date;
 
 	/*string date = to_string(day) + "." + to_string(month) + "." + to_string(year);
 
