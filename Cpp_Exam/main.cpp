@@ -13,12 +13,16 @@ void main() {
 	bool menuBack = false;
 	string any;
 
-	Loading();
+	//Loading();
 	ProductSt avatProd;
 	WarehouseGoods avatWareHouse;
 
 	avatWareHouse.CreateList();
 	avatWareHouse.FormProductArray("db.txt", maxSize);
+	avatWareHouse.CheckExpiring();
+	cout << "\n\nEnter any key to continue..." << endl;
+		cin >> any;
+	system("cls");
 
 
 	int size = 0;

@@ -9,6 +9,44 @@
 using namespace std;
 
 
+void WarehouseGoods::CheckExpiring() {
+	dateArray = new string[size];
+	
+	string dayStr;
+	string monthStr;
+	string yearStr;
+	int day;
+	int month;
+	int year;
+	int seconds;
+	bool expire = false;
+	for (int i = 0; i < size; i++) {
+		dateArray[i] = prodBase[i].GetExpire();
+		 dayStr = dateArray[i].substr(0, 2);
+		 monthStr = dateArray[i].substr(3, 2);
+		 yearStr = dateArray[i].substr(6, 4);
+
+		
+
+		 day = stoi(dayStr);
+		 month = stoi(monthStr);
+		 year = stoi(yearStr);
+		 seconds = (year - 1970) * 31557600 + (month - 1) * 2629800 + 86400 * day;
+		 if (seconds < time(nullptr)) {
+			 cout << "You have expired product:\n* ID: " << prodBase[i].GetID() << " => " << prodBase[i].GetGroup() << ", " << prodBase[i].GetName() << ", producer: " << prodBase[i].GetProducer() << ", price: " << prodBase[i].GetPrice() << "grn. , date of arriving: " << prodBase[i].GetArrival() << ", date of expiring: " << prodBase[i].GetExpire() << ";" << endl;
+			 expire = true;
+		 }
+		 else {}
+
+
+	}
+	if (expire == false) {
+		cout << "You have not expired products." << endl;
+	}
+
+
+}
+
 void WarehouseGoods::CreateList() {
 	prodBase = new  ProductSt[size];
 	//for (int i = 0; i < size; i++) {

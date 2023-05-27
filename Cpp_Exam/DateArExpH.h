@@ -7,9 +7,9 @@ using namespace std;
 struct Date {
 private:
 
-	int day;
-	int month;
-	int year;
+	string day;
+	string month;
+	string year;
 
 public:
 	string SetDate();

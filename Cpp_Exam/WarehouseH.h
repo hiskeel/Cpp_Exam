@@ -11,6 +11,7 @@ private:
 	int IDdelete;
 	int approve;
 	ProductSt* prodBase;
+	string* dateArray;
 	int ID;
 	int size = 1;
 	bool apply = false;
@@ -23,7 +24,7 @@ public:
 	void DeleteProduct();
 	void ReplaceProduct();
 
-	
+	void CheckExpiring();
 	void SortByPriceToHigher();
 	void SortByPriceToLower();
 	void SortByGroup();

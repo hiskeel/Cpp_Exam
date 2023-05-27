@@ -4,10 +4,10 @@
 
 
 string Date::SetDate() {
-	cout << "Enter day: "; cin >> day;
-	cout << "Enter month: "; cin >> month;
+	cout << "Enter day(example: 01 .): "; cin >> day;
+	cout << "Enter month(example: 01 .): "; cin >> month;
 	cout << "Enter year: "; cin >> year;
-	string date = to_string(day) + "." + to_string(month) + "." + to_string(year);
+	string date = day + "." + month + "." + year;
 
 
 	return date;
@@ -18,7 +18,7 @@ string Date::SetDate() {
 	return date;*/
 }
 string Date::GetDate(){
-	string date = to_string(day) + "." + to_string(month) + "." + to_string(year);
+	string date = day + "." + month + "." + year;
 
 
 	return date;
