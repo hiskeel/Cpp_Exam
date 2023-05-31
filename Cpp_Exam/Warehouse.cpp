@@ -106,7 +106,7 @@ void WarehouseGoods::ShowList() {
 	
 	for (int i = 0; i < size; i++) {
 		
-		cout << "* ID: " << prodBase[i].GetID() << " => " << prodBase[i].GetGroup() << ", " << prodBase[i].GetName() << ", producer: " << prodBase[i].GetProducer() << ", price: " << prodBase[i].GetPrice() << "grn. , date of arriving: " << prodBase[i].GetArrival() << ", date of expiring: " << prodBase[i].GetExpire() << ";" << endl;
+		cout << "* ID: " << prodBase[i].GetID() << " => " << prodBase[i].GetGroup() << ", " << prodBase[i].GetName() << ", producer: " << prodBase[i].GetProducer() << ", price: " << prodBase[i].GetPrice() << " grn. , date of arriving: " << prodBase[i].GetArrival() << ", date of expiring: " << prodBase[i].GetExpire() << ";" << endl;
 		
 
 	}
@@ -296,7 +296,7 @@ void WarehouseGoods::SearchByAriving() {
 	string request;
 	int count = 0;
 
-	cout << "Enter date of ariving that you are searching (example: 10.3.2023): "; cin >> request;
+	cout << "Enter date of ariving that you are searching (example: 10.03.2023): "; cin >> request;
 
 	for (int i = 0; i < size; i++) {
 
@@ -319,7 +319,7 @@ void WarehouseGoods::SearchByExpiring() {
 	string request;
 	int count = 0;
 
-	cout << "Enter expiring date that you are searching (example: 10.3.2023): "; cin >> request;
+	cout << "Enter expiring date that you are searching (example: 10.03.2023): "; cin >> request;
 
 	for (int i = 0; i < size; i++) {
 

@@ -153,7 +153,3 @@ void ProductSt::SaveToFile(ofstream& file) {
 	file << GetArrival() << endl;
 	file << GetExpire() << endl;
 }
-
-
-
-

@@ -10,6 +10,7 @@ private:
 	string day;
 	string month;
 	string year;
+	bool contining = false;
 
 public:
 	string SetDate();

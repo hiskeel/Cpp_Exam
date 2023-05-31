@@ -13,7 +13,7 @@ void main() {
 	bool menuBack = false;
 	string any;
 
-	//Loading();
+	Loading();
 	ProductSt avatProd;
 	WarehouseGoods avatWareHouse;
 
